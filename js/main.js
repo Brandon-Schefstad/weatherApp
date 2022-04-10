@@ -29,11 +29,11 @@ async function getWeatherData() {
   try{
     let data = await fetch(url)
     data = await data.json()
-    document.querySelector('.temperature').innerHTML=`Temperature: ${data.main.temp} °F`
-    document.querySelector('.feels_like').innerText=`That feels like: ${data.main.feels_like}°F`
+    document.querySelector('.temperature').innerHTML=`Temperature:<br>${data.main.temp} °F`
+    document.querySelector('.feels_like').innerText=`That feels like:\n ${data.main.feels_like}°F`
     const visibility = (data.visibility/100)
-    document.querySelector('.visibility').innerText=`Visibility: ${visibility}%`
-    document.querySelector('.description').innerText=`Description: ${data.weather[0].description}`
+    document.querySelector('.visibility').innerText=`Visibility: \n ${visibility}%`
+    document.querySelector('.description').innerText=`Description: \n ${data.weather[0].description}`
   }catch(error){
     console.error(error)
   }  

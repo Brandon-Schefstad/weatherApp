@@ -3,6 +3,13 @@
 /*******************************************/
 :root{
   --spacing: 2em;
+  --box-shadow: 4px 4px 2px rgb(0,0,0);
+  --contrast-red:#fffae0 ;
+  --neutral-blue:#1d71f2 ;
+  --dark-blue:#0d2d5c ;
+  /* --contrast-red: rgb(84,65,109);
+  --neutral-blue: rgb(117,180,227);
+  --dark-blue: rgb(43,35,90); */
 }
 /* Box Model Hack */
 *{
@@ -101,35 +108,47 @@ img{
 }
 .main{
   display:flex;
+  width:90rem;
+  height:60rem;
   justify-content: space-evenly;
-  background-color: aliceblue;
-  margin:5rem 5rem 0rem 5rem;
-  padding:0rem 0rem 3rem 0rem;
+  background-color:var(--dark-blue);
+  margin:auto;
+  margin-top:2em;
+  padding:2em;
   border-radius: 0.8rem;
+  box-shadow: var(--box-shadow)
+}
+.formcontainer,
+.maindisplay,
+.griddisplay,
+.griddisplay__panel{
+  background-color: var(--neutral-blue);
 }
 .formcontainer{
   display:flex;
   margin:auto;
+  margin-top:2em;
   padding-block:2em;
   padding-left:1em;
   padding-right:1em;
   text-align: right;
   width:20em;
-  background:rgb(14,154,167);
-  border-radius: 0.5em;;
+  border-radius: 0.5em;
+  box-shadow: var(--box-shadow)
 }
 .form{
   display:grid;
   margin:auto;
   grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(3,1fr);
+  grid-template-rows: repeat(3,1.45em);
   text-align: center;
   font-size:1.5em;
   padding-right:1.5rem;
+  padding-bottom:1em;
 }
 input{
   width:80%;
-  text-align:center;
+  text-align:left;
   border-radius: 0.3rem;
 }
 .submit{
@@ -139,6 +158,7 @@ input{
   width:100%;
   text-align:center;
   margin:auto;
+  margin-top:1em;
 }
 .wrapper{
   display:flex;
@@ -147,18 +167,20 @@ input{
   margin-top:2em;
   text-align:center;
 }
-
+.weather-module{
+  width:60%;
+}
 .maindisplay{
-  background-color:rgba(14,154,167);
-  font-size:3rem;
-  margin-left:0.67em;
+  font-size:2.8rem;
+  margin:auto;
   margin-bottom:0.5em;
+  width:50%;
   border-radius: 0.2em;
+  box-shadow: var(--box-shadow)
 }
 .maindisplay__text{}
 .maindisplay__image{}
 .griddisplay{
-  background-color: rgb(14,154,167);
   display:grid;
   grid-template-columns: repeat(2,50%);
   grid-template-rows: repeat(2,1fr);
@@ -170,23 +192,23 @@ input{
   margin-left:2em;
   position:relative;
   border-radius: 0.5em;
+  box-shadow: var(--box-shadow)
 }
 .griddisplay__panel{
-  background-color:rgba(61,164,171);
   border:2.5px solid rgb(6, 70, 76);
-  height:10em;
-  width:80%;
+  height:11em;
+  width:90%;
+  min-width:10em;
   display:flex;
   justify-content: center;
   border-radius: 0.7em;
   margin-top:1em;
-  color:rgba(0,0,0,1);
+  color:black;
   position: relative;
   padding:0.5em;
 }
 .griddisplay__panel:before{
   content:'';
-  box-shadow: inset 0 0 60px rgba(255, 255, 255, .5);
   filter: blur(10px);
   position:absolute;
   height:100%;
@@ -200,17 +222,20 @@ input{
   text-transform: capitalize;
 }
 .image-wrapper{
-  background:rgb(254,138,113);
+  background:var(--contrast-red);
   margin-left:-6rem;
   padding:2em;
-  margin-top:2rem;
+  margin-left:2em;
+  margin-top:10em;
+  margin-bottom:10em;
   border-radius:1.25rem;
+  box-shadow: inset 0px 0px 10px white;
 }
 .image{
   max-height:500px;
   max-width:500px;
   border-radius:1.25rem;
-  box-shadow: 4px 4px 4px rgba(74,78,77,0.8)
+  box-shadow: inset 0px 0px 10px white;
 }
 
 /******************************************
