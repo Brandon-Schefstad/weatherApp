@@ -195,7 +195,7 @@ input{
   box-shadow: var(--box-shadow)
 }
 .griddisplay__panel{
-  border:2.5px solid rgb(6, 70, 76);
+  border:2.5px solid rgb(14, 34, 36);
   height:11em;
   width:90%;
   min-width:10em;
@@ -210,9 +210,11 @@ input{
 .griddisplay__panel:before{
   content:'';
   filter: blur(10px);
+  box-shadow: inset 0px 0px 30000px rgba(255, 253, 253,0.5);
   position:absolute;
   height:100%;
   width:100%;
+  z-index:0;
   
 }
 .griddisplay__panel>span{
@@ -220,6 +222,7 @@ input{
   align-items: center;
   font-size:1.7rem;
   text-transform: capitalize;
+  z-index:1;
 }
 .image-wrapper{
   background:var(--contrast-red);
