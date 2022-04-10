@@ -89,7 +89,11 @@ select {
 /*******************************************/
 
 body{
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(0,212,255,1) 100%);
+  background-color: rgb(74,78,77);
+}
+.hero{
+  display:flex;
+  justify-content:space-between;
 }
 img{
   display: block;
@@ -98,17 +102,20 @@ img{
 .main{
   display:flex;
   justify-content: space-evenly;
+  background-color: aliceblue;
+  margin:5rem 5rem 0rem 5rem;
+  padding:0rem 0rem 3rem 0rem;
+  border-radius: 0.8rem;
 }
 .formcontainer{
   display:flex;
-  margin-top:2em;
-  margin-left:10em;
+  margin:auto;
   padding-block:2em;
   padding-left:1em;
   padding-right:1em;
   text-align: right;
   width:20em;
-  background:white;
+  background:rgb(14,154,167);
   border-radius: 0.5em;;
 }
 .form{
@@ -142,7 +149,7 @@ input{
 }
 
 .maindisplay{
-  background-color:rgba(169, 49, 153, 0.644);
+  background-color:rgba(14,154,167);
   font-size:3rem;
   margin-left:0.67em;
   margin-bottom:0.5em;
@@ -151,31 +158,31 @@ input{
 .maindisplay__text{}
 .maindisplay__image{}
 .griddisplay{
-  background-color: rgb(46, 25, 66);
+  background-color: rgb(14,154,167);
   display:grid;
   grid-template-columns: repeat(2,50%);
   grid-template-rows: repeat(2,1fr);
+  justify-items: center;
   padding-top:0.6em;
   padding-left:1em;
   padding-right:1em;
+  padding-bottom:2em;
   margin-left:2em;
   position:relative;
-  overflow-x: scroll;
   border-radius: 0.5em;
 }
 .griddisplay__panel{
-  background-color:rgba(0, 136, 255,0.5);
-  border:2.5px solid rgba(99, 182, 255, 0.5);
+  background-color:rgba(61,164,171);
+  border:2.5px solid rgb(6, 70, 76);
   height:10em;
-  width:258px;
+  width:80%;
   display:flex;
   justify-content: center;
   border-radius: 0.7em;
   margin-top:1em;
-  margin-left:0.5em;
-  margin-right:0.5em;
   color:rgba(0,0,0,1);
   position: relative;
+  padding:0.5em;
 }
 .griddisplay__panel:before{
   content:'';
@@ -193,17 +200,17 @@ input{
   text-transform: capitalize;
 }
 .image-wrapper{
-  background:white;
+  background:rgb(254,138,113);
+  margin-left:-6rem;
   padding:2em;
   margin-top:2rem;
   border-radius:1.25rem;
 }
 .image{
-  margin-top:2em;
   max-height:500px;
   max-width:500px;
   border-radius:1.25rem;
-  box-shadow: 4px 4px 4px rgba(0, 136, 255,0.5)
+  box-shadow: 4px 4px 4px rgba(74,78,77,0.8)
 }
 
 /******************************************
@@ -211,4 +218,43 @@ input{
 /*******************************************/
 .hidden{
   visibility: hidden;
+}
+
+@media screen and (max-width:1500px){
+  .main{
+    flex-direction:column;
+    padding:2em;
+  }
+
+  .image-wrapper{
+    margin-left:2em;
+  }
+}
+
+@media screen and (max-width:780px){
+  .griddisplay{
+    grid-template-columns: none;
+    grid-auto-rows:auto
+  }
+  .griddisplay__panel{
+    height:auto;
+  }
+  .griddisplay__panel > span{
+    font-size:1.2rem;
+    height:4rem;
+  }
+  img{
+    width:200px;
+    margin-top: 0.5rem;
+    margin-top:0rem;
+  }
+  .image-wrapper{
+    padding: 0.5rem 0rem 0.5rem 0rem;
+  }
+}
+
+@media screen and (max-width:500px){
+  .griddisplay__panel > span{
+    font-size:0.8rem;
+  }
 }
