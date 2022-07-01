@@ -49,24 +49,24 @@ async function getWeatherData() {
 	}
 }
 // Uses city name to get image
-async function getImage() {
-	let city = document.querySelector('#city').value;
-	city = city.toLowerCase();
-	let url = `https://api.teleport.org/api/urban_areas/slug:${city}/images/`;
-	console.log(`url for ${city} ${url}`);
-	try {
-		document.querySelector('img').classList.remove('hidden');
-		let response = await fetch(url);
-		response = await response.json();
-		let source = response.photos[0].image.mobile;
-		console.log(source);
-		document.querySelector('img').src = response.photos[0].image.mobile;
-	} catch (error) {
-		console.error(error);
-		document.querySelector('img').classList.add('hidden');
-	}
-}
+// async function getImage() {
+// 	let city = document.querySelector('#city').value;
+// 	city = city.toLowerCase();
+// 	let url = `https://api.teleport.org/api/urban_areas/slug:${city}/images/`;
+// 	console.log(`url for ${city} ${url}`);
+// 	try {
+// 		document.querySelector('img').classList.remove('hidden');
+// 		let response = await fetch(url);
+// 		response = await response.json();
+// 		let source = response.photos[0].image.mobile;
+// 		console.log(source);
+// 		document.querySelector('img').src = response.photos[0].image.mobile;
+// 	} catch (error) {
+// 		console.error(error);
+// 		document.querySelector('img').classList.add('hidden');
+// 	}
+// }
 async function updateDOM() {
 	getWeatherData();
-	getImage();
+	// getImage();
 }

@@ -248,7 +248,7 @@ input {
 	visibility: hidden;
 }
 
-@media screen and (max-width: 1500px) {
+/* @media screen and (max-width: 1500px) {
 	.main {
 		flex-direction: column;
 		padding: 2em;
@@ -257,7 +257,7 @@ input {
 	.image-wrapper {
 		margin-left: 2em;
 	}
-}
+} */
 
 @media screen and (max-width: 780px) {
 	.griddisplay {
